@@ -1,5 +1,6 @@
 # GGAlertAction
 cell实现Alert效果，可随意自定义选择视图
+
 ![image](https://github.com/jixiang0903/GGAlertAction/blob/master/2017-08-24%2014_59_06.gif)
 导入头文件
 #import "AlertAction.h"
@@ -24,6 +25,7 @@ cell实现Alert效果，可随意自定义选择视图
     [alertView showWithActions:[self selectActions]];
 
 }
+
 //图片不会被隐藏
 - (NSMutableArray<AlertAction *> *)QQActions {
     // 发起多人聊天 action
@@ -55,6 +57,7 @@ cell实现Alert效果，可随意自定义选择视图
     NSMutableArray *actionArr=[NSMutableArray arrayWithObjects:section1, section2, nil];
     return actionArr;
 }
+
 //图片默认隐藏，选择后对应行数图片显示
 - (NSMutableArray<AlertAction *> *)selectActions {
     // 全部支付 action
