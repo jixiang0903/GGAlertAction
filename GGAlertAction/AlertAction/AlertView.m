@@ -104,7 +104,12 @@ static float const kPopoverViewCellHeight = 50.f; ///< cell指定高度
     [_keyWindow addSubview:_shadeView];
     // 刷新数据以获取具体的ContentSize
     [_tableView reloadData];
-    CGFloat currentH = _tableView.contentSize.height;
+    CGFloat currentH;
+    if (@available(iOS 11.0, *)) {
+        currentH = _tableView.contentSize.height - 35;
+    }else{
+        currentH = _tableView.contentSize.height;
+    }
     // 限制最高高度, 免得选项太多时超出屏幕
     if (currentH > _windowHeight) { // 如果弹窗高度大于最大高度的话则限制弹窗高度等于最大高度并允许tableView滑动.
         currentH = _windowHeight;
@@ -132,8 +137,14 @@ static float const kPopoverViewCellHeight = 50.f; ///< cell指定高度
     }];
 }
 #pragma mark  **UITABLEVIEWDELEGATE**
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    return nil;
+}
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    return nil;
+}
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 10;
+    return 5;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 0.001;
