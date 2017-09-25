@@ -106,7 +106,7 @@ static float const kPopoverViewCellHeight = 50.f; ///< cell指定高度
     [_tableView reloadData];
     CGFloat currentH;
     if (@available(iOS 11.0, *)) {
-        currentH = _tableView.contentSize.height - 35;
+        currentH = _tableView.contentSize.height - 25;
     }else{
         currentH = _tableView.contentSize.height;
     }
