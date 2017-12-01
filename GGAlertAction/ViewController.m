@@ -102,7 +102,7 @@
         _textLabel.text = @"取消";
     }];
     
-    NSArray *section1 =@[allPayAction, fastAction, bankAction, weixinAction, zhifubaoAction];
+    NSArray *section1 =@[allPayAction, fastAction, bankAction, weixinAction, zhifubaoAction, fastAction, bankAction, weixinAction, zhifubaoAction, fastAction, bankAction, weixinAction, zhifubaoAction, fastAction, bankAction, weixinAction, zhifubaoAction];
     NSArray *section2 =@[cancelAction];
     AlertAction *alert=[[AlertAction alloc]init];
     alert.selectRow = _actionImgShowRow;
